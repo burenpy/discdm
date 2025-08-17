@@ -100,10 +100,11 @@ class Files:
     def write_files():
         files = ["tokens.txt", "proxies.txt"]
         for file in files:
+            path = os.path.join("data", file)
             try:
-                if not os.path.exists(file):
-                    with open(f"data/{file}", "a") as f:
-                        f.close()
+                if not os.path.exists(path):
+                    with open(path, "a"):
+                        pass
             except Exception as e:
                 console.log("Failed", C["red"], "Failed to Write Files", e)
 
